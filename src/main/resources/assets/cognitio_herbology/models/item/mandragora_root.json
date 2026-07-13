@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "cognitio_herbology:item/mandragora_root"
+  }
+}

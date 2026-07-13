@@ -1,5 +1,6 @@
 {
-  "itemGroup.cognitio_herbology": "Example Mod Tab",
-  "block.cognitio_herbology.example_block": "Example Block",
-  "item.cognitio_herbology.example_item": "Example Item"
+  "itemGroup.cognitio_herbology": "Cognitio: Herbology",
+  "block.cognitio_herbology.mandragora_crop": "Mandrake Crop",
+  "item.cognitio_herbology.mandragora_root": "Mandrake Root",
+  "item.cognitio_herbology.mandragora_seeds": "Mandrake Seeds"
 }

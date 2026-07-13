@@ -20,6 +20,7 @@ public class ModBlocks {
                     .noCollission()
                     .randomTicks()
                     .instabreak()
+                    .noOcclusion()
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY)));
 
