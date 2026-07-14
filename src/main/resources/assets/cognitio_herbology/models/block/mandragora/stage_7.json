@@ -4,16 +4,16 @@
 	"render_type": "minecraft:cutout",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "cognitio_herbology:block/texture_raiz",
-		"5": "cognitio_herbology:block/texture_flor1",
-		"6": "cognitio_herbology:block/texture_folha1",
-		"7": "cognitio_herbology:block/texture_folha2",
-		"8": "cognitio_herbology:block/texture_folha3",
-		"9": "cognitio_herbology:block/texture_folha4",
-		"10": "cognitio_herbology:block/texture_flor2",
-		"11": "cognitio_herbology:block/texture_flor3",
-		"12": "cognitio_herbology:block/texture_flor4",
-		"particle": "cognitio_herbology:block/texture_folha1"
+		"1": "cognitio_herbology:block/mandragora/texture_raiz",
+		"5": "cognitio_herbology:block/mandragora/texture_flor1",
+		"6": "cognitio_herbology:block/mandragora/texture_folha1",
+		"7": "cognitio_herbology:block/mandragora/texture_folha2",
+		"8": "cognitio_herbology:block/mandragora/texture_folha3",
+		"9": "cognitio_herbology:block/mandragora/texture_folha4",
+		"10": "cognitio_herbology:block/mandragora/texture_flor2",
+		"11": "cognitio_herbology:block/mandragora/texture_flor3",
+		"12": "cognitio_herbology:block/mandragora/texture_flor4",
+		"particle": "cognitio_herbology:block/mandragora/texture_folha1"
 	},
 	"elements": [
 		{
