@@ -12,6 +12,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> MANDRAGORA_ROOT = ITEMS.registerSimpleItem("mandragora_root", new Item.Properties());
     
+    public static final DeferredItem<Item> DISCERNED_MANDRAGORA_ROOT = ITEMS.registerSimpleItem("discerned_mandragora_root", new Item.Properties());
+    
     public static final DeferredItem<Item> MANDRAGORA_SEEDS = ITEMS.register("mandragora_seeds", 
             () -> new ItemNameBlockItem(ModBlocks.MANDRAGORA_CROP.get(), new Item.Properties()));
 
