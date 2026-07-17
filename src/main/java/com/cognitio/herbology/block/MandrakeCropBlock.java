@@ -35,9 +35,6 @@ public class MandrakeCropBlock extends CropBlock {
                 boolean wearingGloves = false; 
 
                 if (!wearingGloves) {
-                    // Dano físico nos tímpanos do jogador
-                    player.hurt(player.damageSources().magic(), 4.0F);
-
                     // A Dor Existencial - Integração com o CognitioCore!
                     // Injeta 20 pontos base de Sobrecarga Mental.
                     FrenzyEngine.addFrenzy(player, 20f);
