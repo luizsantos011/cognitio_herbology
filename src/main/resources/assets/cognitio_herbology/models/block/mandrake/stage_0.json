@@ -4,9 +4,9 @@
 	"render_type": "minecraft:cutout",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "cognitio_herbology:block/mandragora/texture_caule",
-		"1": "cognitio_herbology:block/mandragora/texture_folha",
-		"particle": "cognitio_herbology:block/mandragora/texture_caule"
+		"0": "cognitio_herbology:block/mandrake/texture_caule",
+		"1": "cognitio_herbology:block/mandrake/texture_folha",
+		"particle": "cognitio_herbology:block/mandrake/texture_caule"
 	},
 	"elements": [
 		{

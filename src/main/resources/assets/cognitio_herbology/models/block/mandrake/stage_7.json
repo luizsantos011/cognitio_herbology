@@ -4,19 +4,19 @@
 	"render_type": "minecraft:cutout",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "cognitio_herbology:block/mandragora/texture_stem",
-		"1": "cognitio_herbology:block/mandragora/texture_root",
-		"2": "cognitio_herbology:block/mandragora/texture_leave1",
-		"3": "cognitio_herbology:block/mandragora/texture_leave2",
-		"4": "cognitio_herbology:block/mandragora/texture_leave3",
-		"5": "cognitio_herbology:block/mandragora/texture_leave4",
-		"6": "cognitio_herbology:block/mandragora/texture_leave5",
-		"7": "cognitio_herbology:block/mandragora/texture_flower1",
-		"8": "cognitio_herbology:block/mandragora/texture_flower2",
-		"9": "cognitio_herbology:block/mandragora/texture_flower3",
-		"10": "cognitio_herbology:block/mandragora/texture_flower4",
-		"11": "cognitio_herbology:block/mandragora/texture_flower5",
-		"particle": "cognitio_herbology:block/mandragora/texture_stem"
+		"0": "cognitio_herbology:block/mandrake/texture_stem",
+		"1": "cognitio_herbology:block/mandrake/texture_root",
+		"2": "cognitio_herbology:block/mandrake/texture_leave1",
+		"3": "cognitio_herbology:block/mandrake/texture_leave2",
+		"4": "cognitio_herbology:block/mandrake/texture_leave3",
+		"5": "cognitio_herbology:block/mandrake/texture_leave4",
+		"6": "cognitio_herbology:block/mandrake/texture_leave5",
+		"7": "cognitio_herbology:block/mandrake/texture_flower1",
+		"8": "cognitio_herbology:block/mandrake/texture_flower2",
+		"9": "cognitio_herbology:block/mandrake/texture_flower3",
+		"10": "cognitio_herbology:block/mandrake/texture_flower4",
+		"11": "cognitio_herbology:block/mandrake/texture_flower5",
+		"particle": "cognitio_herbology:block/mandrake/texture_stem"
 	},
 	"elements": [
 		{

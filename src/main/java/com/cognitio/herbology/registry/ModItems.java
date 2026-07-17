@@ -10,12 +10,12 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CognitioHerbology.MODID);
 
-    public static final DeferredItem<Item> MANDRAGORA_ROOT = ITEMS.registerSimpleItem("mandragora_root", new Item.Properties());
+    public static final DeferredItem<Item> MANDRAKE_ROOT = ITEMS.registerSimpleItem("mandrake_root", new Item.Properties());
     
-    public static final DeferredItem<Item> DISCERNED_MANDRAGORA_ROOT = ITEMS.registerSimpleItem("discerned_mandragora_root", new Item.Properties());
+    public static final DeferredItem<Item> DISCERNED_MANDRAKE_ROOT = ITEMS.registerSimpleItem("discerned_mandrake_root", new Item.Properties());
     
-    public static final DeferredItem<Item> MANDRAGORA_SEEDS = ITEMS.register("mandragora_seeds", 
-            () -> new ItemNameBlockItem(ModBlocks.MANDRAGORA_CROP.get(), new Item.Properties()));
+    public static final DeferredItem<Item> MANDRAKE_SEEDS = ITEMS.register("mandrake_seeds", 
+            () -> new ItemNameBlockItem(ModBlocks.MANDRAKE_CROP.get(), new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -4,10 +4,10 @@
 	"render_type": "minecraft:cutout",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "cognitio_herbology:block/mandragora/texture_raiz_baby",
-		"1": "cognitio_herbology:block/mandragora/texture_folha",
-		"2": "cognitio_herbology:block/mandragora/texture_folha2_baby",
-		"particle": "cognitio_herbology:block/mandragora/texture_raiz_baby"
+		"0": "cognitio_herbology:block/mandrake/texture_raiz_baby",
+		"1": "cognitio_herbology:block/mandrake/texture_folha",
+		"2": "cognitio_herbology:block/mandrake/texture_folha2_baby",
+		"particle": "cognitio_herbology:block/mandrake/texture_raiz_baby"
 	},
 	"elements": [
 		{

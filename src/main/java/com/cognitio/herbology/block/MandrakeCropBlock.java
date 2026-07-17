@@ -11,15 +11,15 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class MandragoraCropBlock extends CropBlock {
+public class MandrakeCropBlock extends CropBlock {
 
-    public MandragoraCropBlock(Properties properties) {
+    public MandrakeCropBlock(Properties properties) {
         super(properties);
     }
 
     @Override
     protected ItemLike getBaseSeedId() {
-        return ModItems.MANDRAGORA_SEEDS.get();
+        return ModItems.MANDRAKE_SEEDS.get();
     }
 
     @Override

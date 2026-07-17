@@ -47,10 +47,10 @@ public class CognitioHerbology {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> HERBOLOGY_TAB = CREATIVE_MODE_TABS.register("herbology_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.cognitio_herbology")) 
             .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> com.cognitio.herbology.registry.ModItems.MANDRAGORA_ROOT.get().getDefaultInstance())
+            .icon(() -> com.cognitio.herbology.registry.ModItems.MANDRAKE_ROOT.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(com.cognitio.herbology.registry.ModItems.MANDRAGORA_ROOT.get()); 
-                output.accept(com.cognitio.herbology.registry.ModItems.MANDRAGORA_SEEDS.get()); 
+                output.accept(com.cognitio.herbology.registry.ModItems.MANDRAKE_ROOT.get()); 
+                output.accept(com.cognitio.herbology.registry.ModItems.MANDRAKE_SEEDS.get()); 
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
@@ -86,6 +86,15 @@ public class CognitioHerbology {
         LOGGER.info("{}{}", Config.MAGIC_NUMBER_INTRODUCTION.get(), Config.MAGIC_NUMBER.getAsInt());
 
         Config.ITEM_STRINGS.get().forEach((item) -> LOGGER.info("ITEM >> {}", item));
+
+        // Registrar transmutação da mandrágora
+        event.enqueueWork(() -> {
+            com.cognitio.api.perception.TransmutationAPI.register(
+                com.cognitio.herbology.registry.ModItems.MANDRAKE_ROOT.get(),
+                com.cognitio.herbology.registry.ModItems.DISCERNED_MANDRAKE_ROOT.get(),
+                com.cognitio.api.perception.EnlightenmentTier.TIER_2
+            );
+        });
     }
 
     // (Removido addCreative method)

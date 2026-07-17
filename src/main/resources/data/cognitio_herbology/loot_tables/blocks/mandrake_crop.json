@@ -12,17 +12,17 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "cognitio_herbology:mandragora_crop",
+                  "block": "cognitio_herbology:mandrake_crop",
                   "properties": {
                     "age": "7"
                   }
                 }
               ],
-              "name": "cognitio_herbology:mandragora_root"
+              "name": "cognitio_herbology:mandrake_root"
             },
             {
               "type": "minecraft:item",
-              "name": "cognitio_herbology:mandragora_seeds"
+              "name": "cognitio_herbology:mandrake_seeds"
             }
           ]
         }
@@ -36,7 +36,7 @@
           "conditions": [
             {
               "condition": "minecraft:block_state_property",
-              "block": "cognitio_herbology:mandragora_crop",
+              "block": "cognitio_herbology:mandrake_crop",
               "properties": {
                 "age": "7"
               }
@@ -53,7 +53,7 @@
               }
             }
           ],
-          "name": "cognitio_herbology:mandragora_seeds"
+          "name": "cognitio_herbology:mandrake_seeds"
         }
       ]
     }
