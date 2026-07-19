@@ -10,6 +10,8 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 
 public class MandrakeCropBlock extends CropBlock {
 
@@ -28,17 +30,8 @@ public class MandrakeCropBlock extends CropBlock {
             // Verifica se a planta está no estágio final de crescimento
             if (this.isMaxAge(state)) {
                 
-                // O Grito da Mandrágora
+                // O Grito da Mandrágora (Apenas sonoro, o Frenesi agora vem do inventário)
                 level.playSound(null, pos, SoundEvents.GHAST_SCREAM, SoundSource.BLOCKS, 2.0F, 1.5F);
-
-                // TODO: Adicionar luvas de couro grosso como checagem
-                boolean wearingGloves = false; 
-
-                if (!wearingGloves) {
-                    // A Dor Existencial - Integração com o CognitioCore!
-                    // Injeta 20 pontos base de Sobrecarga Mental.
-                    FrenzyEngine.addFrenzy(player, 20f);
-                }
             }
         }
         return super.playerWillDestroy(level, pos, state, player);
