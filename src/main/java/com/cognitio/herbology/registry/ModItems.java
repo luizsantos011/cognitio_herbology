@@ -19,7 +19,7 @@ public class ModItems {
             () -> new ItemNameBlockItem(ModBlocks.MANDRAKE_CROP.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> GLOVES = ITEMS.register("gloves", 
-            () -> new GlovesItem(new Item.Properties().stacksTo(1)));
+            () -> new GlovesItem(new Item.Properties().durability(256)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
