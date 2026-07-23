@@ -1,6 +1,8 @@
 {
   "loader": "neoforge:separate_transforms",
-  "base": "cognitio_herbology:item/gloves_2d",
+  "base": {
+    "parent": "cognitio_herbology:item/gloves_2d"
+  },
   "perspectives": {
     "thirdperson_lefthand": { "parent": "cognitio_herbology:item/gloves_3d" },
     "firstperson_lefthand": { "parent": "cognitio_herbology:item/gloves_3d" }
