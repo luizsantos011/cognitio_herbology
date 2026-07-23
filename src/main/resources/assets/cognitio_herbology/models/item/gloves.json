@@ -1,6 +1,15 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "cognitio_herbology:item/gloves"
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "cognitio_herbology:item/gloves"
+    }
+  },
+  "perspectives": {
+    "thirdperson_righthand": { "parent": "cognitio_herbology:item/gloves_3d" },
+    "thirdperson_lefthand": { "parent": "cognitio_herbology:item/gloves_3d" },
+    "firstperson_righthand": { "parent": "cognitio_herbology:item/gloves_3d" },
+    "firstperson_lefthand": { "parent": "cognitio_herbology:item/gloves_3d" }
   }
 }
