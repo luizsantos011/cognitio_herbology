@@ -7,9 +7,7 @@
     }
   },
   "perspectives": {
-    "thirdperson_righthand": { "parent": "cognitio_herbology:item/gloves_3d" },
     "thirdperson_lefthand": { "parent": "cognitio_herbology:item/gloves_3d" },
-    "firstperson_righthand": { "parent": "cognitio_herbology:item/gloves_3d" },
     "firstperson_lefthand": { "parent": "cognitio_herbology:item/gloves_3d" }
   }
 }
