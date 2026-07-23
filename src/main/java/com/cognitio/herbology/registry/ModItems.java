@@ -21,6 +21,13 @@ public class ModItems {
     public static final DeferredItem<Item> GLOVES = ITEMS.register("gloves", 
             () -> new GlovesItem(new Item.Properties().durability(256)));
 
+    public static final DeferredItem<Item> EARMUFFS = ITEMS.register("earmuffs", 
+            () -> new net.minecraft.world.item.ArmorItem(
+                    net.minecraft.world.item.ArmorMaterials.LEATHER, 
+                    net.minecraft.world.item.ArmorItem.Type.HELMET, 
+                    new Item.Properties().durability(55)
+            ));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

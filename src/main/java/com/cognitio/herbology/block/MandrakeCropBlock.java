@@ -26,14 +26,7 @@ public class MandrakeCropBlock extends CropBlock {
 
     @Override
     public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-        if (!level.isClientSide()) {
-            // Verifica se a planta está no estágio final de crescimento
-            if (this.isMaxAge(state)) {
-                
-                // O Grito da Mandrágora (Apenas sonoro, o Frenesi agora vem do inventário)
-                level.playSound(null, pos, SoundEvents.GHAST_SCREAM, SoundSource.BLOCKS, 2.0F, 1.5F);
-            }
-        }
+        // A Mandrágora agora não faz nada de especial ao quebrar, o efeito ocorre no inventário
         return super.playerWillDestroy(level, pos, state, player);
     }
 }
