@@ -13,6 +13,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> MANDRAKE_ROOT = ITEMS.registerSimpleItem("mandrake_root", new Item.Properties());
     
+    public static final DeferredItem<Item> HOMUNCULUS_TEAR = ITEMS.registerSimpleItem("homunculus_tear", new Item.Properties());
+    
     public static final DeferredItem<Item> DISCERNED_MANDRAKE_ROOT = ITEMS.registerSimpleItem("discerned_mandrake_root", new Item.Properties());
     
     public static final DeferredItem<Item> MANDRAKE_SEEDS = ITEMS.register("mandrake_seeds", 

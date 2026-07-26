@@ -42,6 +42,7 @@ public class CognitioHerbology {
             .displayItems((parameters, output) -> {
                 output.accept(com.cognitio.herbology.registry.ModItems.MANDRAKE_ROOT.get()); 
                 output.accept(com.cognitio.herbology.registry.ModItems.MANDRAKE_SEEDS.get()); 
+                output.accept(com.cognitio.herbology.registry.ModItems.HOMUNCULUS_TEAR.get()); 
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
