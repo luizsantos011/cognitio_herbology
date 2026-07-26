@@ -1,8 +1,6 @@
 package com.cognitio.herbology.item;
 
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -28,14 +26,10 @@ public class GlovesItem extends Item {
      */
     public static boolean damageGloves(Player player, int damage) {
         ItemStack glovesStack = null;
-        InteractionHand handUsed = null;
-
         if (player.getItemInHand(InteractionHand.MAIN_HAND).getItem() instanceof GlovesItem) {
             glovesStack = player.getItemInHand(InteractionHand.MAIN_HAND);
-            handUsed = InteractionHand.MAIN_HAND;
         } else if (player.getItemInHand(InteractionHand.OFF_HAND).getItem() instanceof GlovesItem) {
             glovesStack = player.getItemInHand(InteractionHand.OFF_HAND);
-            handUsed = InteractionHand.OFF_HAND;
         }
 
         if (glovesStack != null && player instanceof ServerPlayer serverPlayer) {
