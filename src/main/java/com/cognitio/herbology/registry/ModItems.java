@@ -8,12 +8,21 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CognitioHerbology.MODID);
 
     public static final DeferredItem<Item> MANDRAKE_ROOT = ITEMS.registerSimpleItem("mandrake_root", new Item.Properties());
     
-    public static final DeferredItem<Item> HOMUNCULUS_TEAR = ITEMS.registerSimpleItem("homunculus_tear", new Item.Properties());
+    public static final DeferredItem<Item> HOMUNCULUS_EXTRACT = ITEMS.registerSimpleItem("homunculus_extract", 
+            new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(0).saturationModifier(0)
+                    .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 300, 0), 1.0f) // Náusea 15 seg, 100% chance
+                    .alwaysEdible()
+                    .build()));
     
     public static final DeferredItem<Item> DISCERNED_MANDRAKE_ROOT = ITEMS.registerSimpleItem("discerned_mandrake_root", new Item.Properties());
     
