@@ -120,7 +120,7 @@ configurations {
 }
 
 dependencies {
-    implementation name: 'cognitio_core-1.0.1'
+    implementation name: "cognitio_core-${core_version}"
 
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
