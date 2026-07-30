@@ -120,7 +120,7 @@ configurations {
 }
 
 dependencies {
-    implementation "com.cognitio:cognitio_core:${core_version}"
+    implementation files("libs/cognitio_core-${core_version}.jar")
 
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
