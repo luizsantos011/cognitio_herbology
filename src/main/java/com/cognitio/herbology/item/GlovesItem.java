@@ -52,4 +52,9 @@ public class GlovesItem extends Item implements Equipable {
     public net.minecraft.core.Holder<net.minecraft.sounds.SoundEvent> getEquipSound() {
         return net.minecraft.sounds.SoundEvents.ARMOR_EQUIP_LEATHER;
     }
+
+    @Override
+    public net.minecraft.world.InteractionResultHolder<ItemStack> use(net.minecraft.world.level.Level level, Player player, InteractionHand hand) {
+        return this.swapWithEquipmentSlot(this, level, player, hand);
+    }
 }
