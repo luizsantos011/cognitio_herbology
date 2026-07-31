@@ -28,16 +28,21 @@ public class MandrakeInventoryHandler {
                 }
                 
                 if (hasDiscernedRoot) {
-                    // Verifica se o jogador está usando o Abafador de Ruídos
                     boolean wearingEarmuffs = player.getItemBySlot(net.minecraft.world.entity.EquipmentSlot.HEAD).is(ModItems.EARMUFFS.get());
+                    long lastCry = player.getPersistentData().getLong("LastMandrakeCry");
+                    long currentTime = player.level().getGameTime();
                     
-                    if (!wearingEarmuffs) {
-                        // Toca o choro da mandrágora (já que o jogador pode escutá-la)
-                        player.level().playSound(null, player.blockPosition(), net.minecraft.sounds.SoundEvents.GHAST_SCREAM, net.minecraft.sounds.SoundSource.PLAYERS, 0.5F, 1.5F);
-                        
-                        // A raiz compreendida pulsa conhecimento proibido: 2.0f de Frenesi por segundo
-                        FrenzyEngine.addFrenzy(player, 2.0f);
+                    // Chora assim que entra (lastCry == 0) ou se passou um tempo (ex: 300 ticks / 15 segundos)
+                    if (currentTime - lastCry > 300 || lastCry == 0) {
+                        player.getPersistentData().putLong("LastMandrakeCry", currentTime);
+                        if (!wearingEarmuffs) {
+                            player.level().playSound(null, player.blockPosition(), net.minecraft.sounds.SoundEvents.GHAST_WARN, net.minecraft.sounds.SoundSource.PLAYERS, 0.5F, 1.5F);
+                            FrenzyEngine.addFrenzy(player, 2.0f);
+                        }
                     }
+                } else {
+                    // Remove o tracker para que grite assim que a raiz voltar ao inventário
+                    player.getPersistentData().remove("LastMandrakeCry");
                 }
             }
         }
