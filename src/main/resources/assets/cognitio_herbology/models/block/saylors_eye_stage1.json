@@ -1,13 +1,14 @@
-﻿{
+{
 	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
+	"render_type": "minecraft:cutout",
 	"textures": {
-		"0": "block/texture_part1",
-		"3": "block/texture_part3",
-		"4": "block/texture_part4",
-		"5": "block/texture_part5",
-		"6": "block/texture_part6",
-		"particle": "block/texture_part1"
+		"0": "cognitio_herbology:block/saylors_eye_texture_part1",
+		"3": "cognitio_herbology:block/saylors_eye_texture_part3",
+		"4": "cognitio_herbology:block/saylors_eye_texture_part4",
+		"5": "cognitio_herbology:block/saylors_eye_texture_part5",
+		"6": "cognitio_herbology:block/saylors_eye_texture_part6",
+		"particle": "cognitio_herbology:block/saylors_eye_texture_part1"
 	},
 	"elements": [
 		{
