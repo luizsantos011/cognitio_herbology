@@ -32,12 +32,16 @@ public class MandrakeInventoryHandler {
                     long lastCry = player.getPersistentData().getLong("LastMandrakeCry");
                     long currentTime = player.level().getGameTime();
                     
+                    // Pulso constante de Frenesi (2.0f a cada 20 ticks / 1 segundo)
+                    if (!wearingEarmuffs) {
+                        FrenzyEngine.addFrenzy(player, 2.0f);
+                    }
+
                     // Chora assim que entra (lastCry == 0) ou se passou um tempo (ex: 300 ticks / 15 segundos)
                     if (currentTime - lastCry > 300 || lastCry == 0) {
                         player.getPersistentData().putLong("LastMandrakeCry", currentTime);
                         if (!wearingEarmuffs) {
                             player.level().playSound(null, player.blockPosition(), net.minecraft.sounds.SoundEvents.GHAST_WARN, net.minecraft.sounds.SoundSource.PLAYERS, 0.5F, 1.5F);
-                            FrenzyEngine.addFrenzy(player, 2.0f);
                         }
                     }
                 } else {

@@ -48,29 +48,4 @@ public class AlchemyEvents {
         });
     }
 
-    @SubscribeEvent
-    public static void onRegisterBrewingRecipes(RegisterBrewingRecipesEvent event) {
-        var builder = event.getBuilder();
-        
-        // Raiz de Mandrágora na Visão Noturna
-        builder.addMix(
-                Potions.NIGHT_VISION,
-                ModItems.MANDRAKE_ROOT.get(),
-                com.cognitio.core.registry.ModPotions.CLAIRVOYANCE
-        );
-
-        // Extrato de Homúnculo na Visão Noturna
-        builder.addMix(
-                Potions.NIGHT_VISION,
-                ModItems.HOMUNCULUS_EXTRACT.get(),
-                com.cognitio.core.registry.ModPotions.CLAIRVOYANCE
-        );
-
-        // Redstone para prolongar a Clarividência
-        builder.addMix(
-                com.cognitio.core.registry.ModPotions.CLAIRVOYANCE,
-                Items.REDSTONE,
-                com.cognitio.core.registry.ModPotions.LONG_CLAIRVOYANCE
-        );
-    }
 }
