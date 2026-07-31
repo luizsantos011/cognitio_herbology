@@ -13,4 +13,9 @@ public class EarmuffsItem extends Item implements Equipable {
     public EquipmentSlot getEquipmentSlot() {
         return EquipmentSlot.HEAD;
     }
+
+    @Override
+    public net.minecraft.core.Holder<net.minecraft.sounds.SoundEvent> getEquipSound() {
+        return net.minecraft.sounds.SoundEvents.ARMOR_EQUIP_LEATHER;
+    }
 }

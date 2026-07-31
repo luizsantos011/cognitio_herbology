@@ -3,10 +3,12 @@ package com.cognitio.herbology.item;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.Equipable;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
-public class GlovesItem extends Item {
+public class GlovesItem extends Item implements Equipable {
     public GlovesItem(Properties properties) {
         super(properties);
     }
@@ -39,5 +41,15 @@ public class GlovesItem extends Item {
         }
         
         return false;
+    }
+
+    @Override
+    public EquipmentSlot getEquipmentSlot() {
+        return EquipmentSlot.MAINHAND;
+    }
+
+    @Override
+    public net.minecraft.core.Holder<net.minecraft.sounds.SoundEvent> getEquipSound() {
+        return net.minecraft.sounds.SoundEvents.ARMOR_EQUIP_LEATHER;
     }
 }
