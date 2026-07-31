@@ -24,6 +24,14 @@ public class ModBlocks {
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY)));
 
+    public static final DeferredBlock<Block> SAYLORS_EYE = BLOCKS.register("saylors_eye",
+            () -> new net.minecraft.world.level.block.SeaPickleBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WATER)
+                    .instabreak()
+                    .sound(SoundType.SLIME_BLOCK)
+                    .noOcclusion()
+                    .pushReaction(PushReaction.DESTROY)));
+
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }

@@ -35,6 +35,9 @@ public class ModItems {
     public static final DeferredItem<Item> MANDRAKE_SEEDS = ITEMS.register("mandrake_seeds", 
             () -> new ItemNameBlockItem(ModBlocks.MANDRAKE_CROP.get(), new Item.Properties()));
 
+    public static final DeferredItem<Item> SAYLORS_EYE = ITEMS.register("saylors_eye", 
+            () -> new net.minecraft.world.item.BlockItem(ModBlocks.SAYLORS_EYE.get(), new Item.Properties()));
+
     public static final DeferredItem<Item> GLOVES = ITEMS.register("gloves", 
             () -> new GlovesItem(new Item.Properties().durability(256)));
 

@@ -4,7 +4,11 @@
   "item.cognitio_herbology.mandrake_root": "Raiz de Mandrágora",
   "item.cognitio_herbology.mandrake_seeds": "Sementes de Mandrágora",
   "item.cognitio_herbology.discerned_mandrake_root": "Raiz de Mandrágora Discernida",
-  "item.cognitio_herbology.gloves": "Luvas",
-  "item.cognitio_herbology.earmuffs": "Abafadores",
-  "item.cognitio_herbology.homunculus_extract": "Extrato de Homúnculo"
+  "item.cognitio_herbology.gloves": "Luvas Botânicas",
+  "item.cognitio_herbology.earmuffs": "Abafadores de Ruído",
+  "item.cognitio_herbology.homunculus_extract": "Extrato de Homúnculo",
+  "block.cognitio_herbology.saylors_eye": "Olho-de-Marujo",
+  "item.cognitio_herbology.saylors_eye": "Olho-de-Marujo",
+  "tooltip.cognitio_herbology.earmuffs": "Essencial para não ensurdecer...",
+  "tooltip.cognitio_herbology.gloves": "Protege as mãos contra toxinas."
 }
