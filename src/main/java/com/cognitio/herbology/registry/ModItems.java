@@ -17,7 +17,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> MANDRAKE_ROOT = ITEMS.registerSimpleItem("mandrake_root", new Item.Properties());
     
-    public static final DeferredItem<Item> HOMUNCULUS_EXTRACT = ITEMS.registerSimpleItem("homunculus_extract", 
+    public static final DeferredItem<Item> HOMUNCULUS_EXTRACT = ITEMS.registerItem("homunculus_extract", 
+            properties -> new com.cognitio.herbology.item.HomunculusExtractItem(properties),
             new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(0).saturationModifier(0)
                     .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 300, 0), 1.0f) // Náusea 15 seg, 100% chance
