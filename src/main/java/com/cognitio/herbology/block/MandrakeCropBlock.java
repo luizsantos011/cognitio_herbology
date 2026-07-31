@@ -21,7 +21,16 @@ public class MandrakeCropBlock extends CropBlock {
 
     @Override
     public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
-        // A Mandrágora agora não faz nada de especial ao quebrar, o efeito ocorre no inventário
+        if (!level.isClientSide()) {
+            boolean wearingEarmuffs = player.getItemBySlot(net.minecraft.world.entity.EquipmentSlot.HEAD).is(ModItems.EARMUFFS.get());
+            if (!wearingEarmuffs) {
+                level.playSound(null, pos, net.minecraft.sounds.SoundEvents.GHAST_SCREAM, net.minecraft.sounds.SoundSource.BLOCKS, 1.0F, 1.0F);
+                // O grito enche frenesi!
+                if (player instanceof net.minecraft.server.level.ServerPlayer serverPlayer) {
+                    com.cognitio.core.perception.FrenzyEngine.addFrenzy(serverPlayer, 5.0f);
+                }
+            }
+        }
         return super.playerWillDestroy(level, pos, state, player);
     }
 }
