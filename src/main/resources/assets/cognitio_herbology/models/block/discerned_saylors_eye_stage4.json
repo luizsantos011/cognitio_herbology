@@ -2,10 +2,10 @@
     "format_version": "1.21.11",
     "credit": "Made with Blockbench",
     "textures": {
-        "0": "cognitio_herbology:block/saylors_eye/normal/texture_part1",
+        "0": "cognitio_herbology:block/saylors_eye/discerned/texture_part1",
         "1": "cognitio_herbology:block/saylors_eye/normal/texture_part2",
         "2": "cognitio_herbology:block/saylors_eye/normal/texture_part3",
-        "particle": "cognitio_herbology:block/saylors_eye/normal/texture_part1"
+        "particle": "cognitio_herbology:block/saylors_eye/discerned/texture_part1"
     },
     "elements": [
         {

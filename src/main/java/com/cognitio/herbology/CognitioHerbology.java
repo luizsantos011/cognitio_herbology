@@ -43,6 +43,8 @@ public class CognitioHerbology {
                 output.accept(com.cognitio.herbology.registry.ModItems.MANDRAKE_ROOT.get()); 
                 output.accept(com.cognitio.herbology.registry.ModItems.MANDRAKE_SEEDS.get()); 
                 output.accept(com.cognitio.herbology.registry.ModItems.HOMUNCULUS_EXTRACT.get()); 
+                output.accept(com.cognitio.herbology.registry.ModItems.SAYLORS_EYE.get()); 
+                output.accept(com.cognitio.herbology.registry.ModItems.DISCERNED_SAYLORS_EYE.get()); 
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
@@ -86,6 +88,11 @@ public class CognitioHerbology {
                 com.cognitio.herbology.registry.ModItems.DISCERNED_MANDRAKE_ROOT.get(),
                 com.cognitio.api.perception.EnlightenmentTier.TIER_2
             );
+            com.cognitio.api.perception.TransmutationAPI.register(
+                com.cognitio.herbology.registry.ModItems.SAYLORS_EYE.get(),
+                com.cognitio.herbology.registry.ModItems.DISCERNED_SAYLORS_EYE.get(),
+                com.cognitio.api.perception.EnlightenmentTier.TIER_2
+            );
         });
     }
 
@@ -98,7 +105,6 @@ public class CognitioHerbology {
         LOGGER.info("HELLO from server starting");
     }
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @EventBusSubscriber(modid = CognitioHerbology.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     static class ClientModEvents {
         @SubscribeEvent
@@ -106,6 +112,61 @@ public class CognitioHerbology {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        }
+
+        @SubscribeEvent
+        static void onModifyBakingResult(net.neoforged.neoforge.client.event.ModelEvent.ModifyBakingResult event) {
+            java.util.Map<net.minecraft.client.resources.model.ModelResourceLocation, net.minecraft.client.resources.model.BakedModel> models = event.getModels();
+            
+            // Variantes do bloco normal Saylor's Eye
+            String[] pickles = {"1", "2", "3", "4"};
+            String[] waterlogged = {"false", "true"};
+            
+            for (String p : pickles) {
+                for (String w : waterlogged) {
+                    String variantStr = "pickles=" + p + ",waterlogged=" + w;
+                    
+                    net.minecraft.client.resources.model.ModelResourceLocation normalLoc = 
+                        new net.minecraft.client.resources.model.ModelResourceLocation(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(MODID, "saylors_eye"), variantStr);
+                        
+                    net.minecraft.client.resources.model.ModelResourceLocation discernedLoc = 
+                        new net.minecraft.client.resources.model.ModelResourceLocation(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(MODID, "discerned_saylors_eye"), variantStr);
+                        
+                    if (models.containsKey(normalLoc) && models.containsKey(discernedLoc)) {
+                        net.minecraft.client.resources.model.BakedModel normalModel = models.get(normalLoc);
+                        net.minecraft.client.resources.model.BakedModel discernedModel = models.get(discernedLoc);
+                        
+                        // Disfarce Duplo: Ambos os blocos vão obedecer à alucinação de Insight!
+                        com.cognitio.herbology.client.model.InsightBakedModel proxy = 
+                            new com.cognitio.herbology.client.model.InsightBakedModel(normalModel, discernedModel, 100);
+                            
+                        models.put(normalLoc, proxy);
+                        models.put(discernedLoc, proxy);
+                    }
+                }
+            }
+        }
+    }
+
+    @EventBusSubscriber(modid = CognitioHerbology.MODID, bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)
+    public static class ClientForgeEvents {
+        private static int lastEffectiveInsight = -1;
+
+        @SubscribeEvent
+        public static void onClientTick(net.neoforged.neoforge.client.event.ClientTickEvent.Post event) {
+            Minecraft mc = Minecraft.getInstance();
+            if (mc.player != null && mc.level != null) {
+                int currentEffective = com.cognitio.core.perception.PerceptionEngine.getEffectivePerception(mc.player);
+                if (lastEffectiveInsight != -1) {
+                    if ((lastEffectiveInsight < 100 && currentEffective >= 100) || (lastEffectiveInsight >= 100 && currentEffective < 100)) {
+                        LOGGER.info("INSIGHT THRESHOLD CROSSED: {} -> {}. Forcing allChanged()!", lastEffectiveInsight, currentEffective);
+                        mc.levelRenderer.allChanged();
+                    }
+                }
+                lastEffectiveInsight = currentEffective;
+            } else {
+                lastEffectiveInsight = -1;
+            }
         }
     }
 }

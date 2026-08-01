@@ -30,6 +30,16 @@ public class ModBlocks {
                     .instabreak()
                     .sound(SoundType.SLIME_BLOCK)
                     .noOcclusion()
+                    .lightLevel(state -> 5)
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final DeferredBlock<Block> DISCERNED_SAYLORS_EYE = BLOCKS.register("discerned_saylors_eye",
+            () -> new net.minecraft.world.level.block.SeaPickleBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WATER)
+                    .instabreak()
+                    .sound(SoundType.SLIME_BLOCK)
+                    .noOcclusion()
+                    .lightLevel(state -> 5)
                     .pushReaction(PushReaction.DESTROY)));
 
     public static void register(IEventBus eventBus) {

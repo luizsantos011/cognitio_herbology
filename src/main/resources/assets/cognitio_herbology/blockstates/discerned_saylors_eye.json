@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "pickles=1,waterlogged=false": { "model": "cognitio_herbology:block/discerned_saylors_eye_stage1" },
+    "pickles=2,waterlogged=false": { "model": "cognitio_herbology:block/discerned_saylors_eye_stage2" },
+    "pickles=3,waterlogged=false": { "model": "cognitio_herbology:block/discerned_saylors_eye_stage3" },
+    "pickles=4,waterlogged=false": { "model": "cognitio_herbology:block/discerned_saylors_eye_stage4" },
+    "pickles=1,waterlogged=true": { "model": "cognitio_herbology:block/discerned_saylors_eye_stage1" },
+    "pickles=2,waterlogged=true": { "model": "cognitio_herbology:block/discerned_saylors_eye_stage2" },
+    "pickles=3,waterlogged=true": { "model": "cognitio_herbology:block/discerned_saylors_eye_stage3" },
+    "pickles=4,waterlogged=true": { "model": "cognitio_herbology:block/discerned_saylors_eye_stage4" }
+  }
+}
