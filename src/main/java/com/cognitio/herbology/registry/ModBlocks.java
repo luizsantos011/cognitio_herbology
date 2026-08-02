@@ -42,6 +42,14 @@ public class ModBlocks {
                     .lightLevel(state -> 5)
                     .pushReaction(PushReaction.DESTROY)));
 
+    public static final DeferredBlock<Block> HOMUNCULUS_CAULDRON = BLOCKS.register("homunculus_cauldron",
+            () -> new com.cognitio.herbology.block.AlchemyCauldronBlock(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.WATER_CAULDRON),
+                    com.cognitio.herbology.registry.ModItems.HOMUNCULUS_EXTRACT, false));
+
+    public static final DeferredBlock<Block> MUNDANE_CAULDRON = BLOCKS.register("mundane_cauldron",
+            () -> new com.cognitio.herbology.block.AlchemyCauldronBlock(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.WATER_CAULDRON),
+                    () -> net.minecraft.world.item.Items.POTION, true));
+
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }

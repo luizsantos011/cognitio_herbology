@@ -50,14 +50,23 @@ public class ServerPayloadHandler {
             }
 
             if (foundMandrake) {
-                // Esvazia o caldeirão
+                // Independentemente do resultado, a água e a raiz são consumidas
                 level.setBlockAndUpdate(pos, Blocks.CAULDRON.defaultBlockState());
-                level.playSound(null, pos, SoundEvents.BREWING_STAND_BREW, SoundSource.BLOCKS, 1.0F, 1.0F);
 
-                // Dropa 3 extratos de homunculo
-                ItemStack extractStack = new ItemStack(ModItems.HOMUNCULUS_EXTRACT.get(), 3);
-                ItemEntity extractEntity = new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5, extractStack);
-                level.addFreshEntity(extractEntity);
+                if (level.getBlockState(pos.below()).is(Blocks.SOUL_FIRE)) {
+                    // Sucesso: Transforma o líquido no extrato de homúnculo (Nível 3)
+                    level.playSound(null, pos, SoundEvents.BREWING_STAND_BREW, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    level.setBlockAndUpdate(pos, com.cognitio.herbology.registry.ModBlocks.HOMUNCULUS_CAULDRON.get().defaultBlockState().setValue(LayeredCauldronBlock.LEVEL, 3));
+                } else {
+                    // Falha: Faltou o calor espiritual correto, a mistura vira Poção Mundana
+                    level.playSound(null, pos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    for (int i = 0; i < 5; i++) {
+                        level.addParticle(net.minecraft.core.particles.ParticleTypes.LARGE_SMOKE, 
+                            pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5, 
+                            0.0, 0.05, 0.0);
+                    }
+                    level.setBlockAndUpdate(pos, com.cognitio.herbology.registry.ModBlocks.MUNDANE_CAULDRON.get().defaultBlockState().setValue(LayeredCauldronBlock.LEVEL, 3));
+                }
             }
         });
     }

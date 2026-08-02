@@ -109,6 +109,17 @@ public class CognitioHerbology {
         }
 
         @SubscribeEvent
+        static void registerBlockColors(net.neoforged.neoforge.client.event.RegisterColorHandlersEvent.Block event) {
+            event.register((state, level, pos, tintIndex) -> {
+                return 0x228B22; // Verde Escuro (Homúnculo)
+            }, com.cognitio.herbology.registry.ModBlocks.HOMUNCULUS_CAULDRON.get());
+
+            event.register((state, level, pos, tintIndex) -> {
+                return 0x808080; // Cinza (Mundana)
+            }, com.cognitio.herbology.registry.ModBlocks.MUNDANE_CAULDRON.get());
+        }
+
+        @SubscribeEvent
         static void onModifyBakingResult(net.neoforged.neoforge.client.event.ModelEvent.ModifyBakingResult event) {
             java.util.Map<net.minecraft.client.resources.model.ModelResourceLocation, net.minecraft.client.resources.model.BakedModel> models = event.getModels();
             
