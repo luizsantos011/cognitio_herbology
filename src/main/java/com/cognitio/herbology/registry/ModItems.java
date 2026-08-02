@@ -38,8 +38,6 @@ public class ModItems {
     public static final DeferredItem<Item> SAYLORS_EYE = ITEMS.register("saylors_eye", 
             () -> new net.minecraft.world.item.BlockItem(ModBlocks.SAYLORS_EYE.get(), new Item.Properties()));
 
-    public static final DeferredItem<Item> DISCERNED_SAYLORS_EYE = ITEMS.register("discerned_saylors_eye", 
-            () -> new net.minecraft.world.item.BlockItem(ModBlocks.DISCERNED_SAYLORS_EYE.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> GLOVES = ITEMS.register("gloves", 
             () -> new GlovesItem(new Item.Properties().durability(256)));

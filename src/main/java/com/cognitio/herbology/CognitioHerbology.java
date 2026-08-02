@@ -44,7 +44,6 @@ public class CognitioHerbology {
                 output.accept(com.cognitio.herbology.registry.ModItems.MANDRAKE_SEEDS.get()); 
                 output.accept(com.cognitio.herbology.registry.ModItems.HOMUNCULUS_EXTRACT.get()); 
                 output.accept(com.cognitio.herbology.registry.ModItems.SAYLORS_EYE.get()); 
-                output.accept(com.cognitio.herbology.registry.ModItems.DISCERNED_SAYLORS_EYE.get()); 
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
@@ -86,11 +85,6 @@ public class CognitioHerbology {
             com.cognitio.api.perception.TransmutationAPI.register(
                 com.cognitio.herbology.registry.ModItems.MANDRAKE_ROOT.get(),
                 com.cognitio.herbology.registry.ModItems.DISCERNED_MANDRAKE_ROOT.get(),
-                com.cognitio.api.perception.EnlightenmentTier.TIER_2
-            );
-            com.cognitio.api.perception.TransmutationAPI.register(
-                com.cognitio.herbology.registry.ModItems.SAYLORS_EYE.get(),
-                com.cognitio.herbology.registry.ModItems.DISCERNED_SAYLORS_EYE.get(),
                 com.cognitio.api.perception.EnlightenmentTier.TIER_2
             );
         });
