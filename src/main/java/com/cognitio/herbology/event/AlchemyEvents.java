@@ -26,25 +26,8 @@ public class AlchemyEvents {
     @SubscribeEvent
     public static void onCommonSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            // Interação com Caldeirão de Água: Raiz + Caldeirão Cheio = 3 Extratos
-            CauldronInteraction.WATER.map().put(ModItems.MANDRAKE_ROOT.get(), (state, level, pos, player, hand, stack) -> {
-                if (state.getValue(LayeredCauldronBlock.LEVEL) == 3) {
-                    if (!level.isClientSide) {
-                        stack.shrink(1);
-                        
-                        // Esvazia o caldeirão
-                        level.setBlockAndUpdate(pos, net.minecraft.world.level.block.Blocks.CAULDRON.defaultBlockState());
-                        level.playSound(null, pos, SoundEvents.BREWING_STAND_BREW, SoundSource.BLOCKS, 1.0F, 1.0F);
-
-                        // Dropa 3 extratos
-                        ItemStack extractStack = new ItemStack(ModItems.HOMUNCULUS_EXTRACT.get(), 3);
-                        ItemEntity entity = new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 1.0, pos.getZ() + 0.5, extractStack);
-                        level.addFreshEntity(entity);
-                    }
-                    return ItemInteractionResult.sidedSuccess(level.isClientSide);
-                }
-                return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-            });
+            // A antiga interação instantânea (CauldronInteraction) foi removida.
+            // Agora o processo é orgânico: jogar a Mandrágora na água e mexer com a pá de madeira.
         });
     }
 
