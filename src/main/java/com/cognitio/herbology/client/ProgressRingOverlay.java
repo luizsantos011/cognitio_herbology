@@ -94,6 +94,8 @@ public class ProgressRingOverlay {
         float totalLength = 80.0f; // 4 lados de 20
         float drawLength = progress * totalLength;
 
+        if (drawLength <= 0) return;
+
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
         RenderSystem.setShader(GameRenderer::getPositionColorShader);
