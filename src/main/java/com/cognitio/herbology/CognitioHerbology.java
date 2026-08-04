@@ -44,6 +44,7 @@ public class CognitioHerbology {
                 output.accept(com.cognitio.herbology.registry.ModItems.MANDRAKE_SEEDS.get()); 
                 output.accept(com.cognitio.herbology.registry.ModItems.HOMUNCULUS_EXTRACT.get()); 
                 output.accept(com.cognitio.herbology.registry.ModItems.SAYLORS_EYE.get()); 
+                output.accept(com.cognitio.herbology.registry.ModItems.WOODEN_SPOON.get()); 
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
@@ -149,6 +150,23 @@ public class CognitioHerbology {
                         models.put(discernedLoc, proxy);
                     }
                 }
+            }
+
+            // Itens de Mandrágora no Inventário
+            net.minecraft.client.resources.model.ModelResourceLocation mandrakeLoc = 
+                new net.minecraft.client.resources.model.ModelResourceLocation(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(MODID, "mandrake_root"), "inventory");
+            net.minecraft.client.resources.model.ModelResourceLocation discernedMandrakeLoc = 
+                new net.minecraft.client.resources.model.ModelResourceLocation(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(MODID, "discerned_mandrake_root"), "inventory");
+            
+            if (models.containsKey(mandrakeLoc) && models.containsKey(discernedMandrakeLoc)) {
+                net.minecraft.client.resources.model.BakedModel mandrakeModel = models.get(mandrakeLoc);
+                net.minecraft.client.resources.model.BakedModel discernedMandrakeModel = models.get(discernedMandrakeLoc);
+                
+                com.cognitio.herbology.client.model.InsightBakedModel mandrakeProxy = 
+                    new com.cognitio.herbology.client.model.InsightBakedModel(mandrakeModel, discernedMandrakeModel, 100);
+                    
+                models.put(mandrakeLoc, mandrakeProxy);
+                models.put(discernedMandrakeLoc, mandrakeProxy);
             }
         }
     }
