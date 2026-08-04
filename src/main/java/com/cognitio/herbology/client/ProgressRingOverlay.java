@@ -34,7 +34,7 @@ public class ProgressRingOverlay {
         boolean isProcessing = false;
 
         // Verifica se está segurando o botão direito com a pá de madeira mirando no caldeirão
-        if (mc.options.keyUse.isDown() && mc.player.getMainHandItem().is(Items.WOODEN_SHOVEL)) {
+        if (mc.options.keyUse.isDown() && mc.player.getMainHandItem().is(com.cognitio.herbology.registry.ModItems.WOODEN_SPOON.get())) {
             if (mc.hitResult != null && mc.hitResult.getType() == HitResult.Type.BLOCK) {
                 BlockHitResult blockHit = (BlockHitResult) mc.hitResult;
                 if (mc.level.getBlockState(blockHit.getBlockPos()).is(Blocks.CAULDRON) || 
@@ -71,7 +71,7 @@ public class ProgressRingOverlay {
         Minecraft mc = Minecraft.getInstance();
         
         float partialTick = event.getPartialTick().getGameTimeDeltaPartialTick(true);
-        boolean isHolding = mc.options.keyUse.isDown() && mc.player != null && mc.player.getMainHandItem().is(Items.WOODEN_SHOVEL);
+        boolean isHolding = mc.options.keyUse.isDown() && mc.player != null && mc.player.getMainHandItem().is(com.cognitio.herbology.registry.ModItems.WOODEN_SPOON.get());
         
         float smoothProgressTicks = progressTicks;
         if (isHolding && progressTicks < MAX_TICKS) {

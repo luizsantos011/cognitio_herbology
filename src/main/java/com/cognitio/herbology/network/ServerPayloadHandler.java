@@ -25,7 +25,7 @@ public class ServerPayloadHandler {
 
             // Secutiry Checks
             if (player.distanceToSqr(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5) > 64.0) return;
-            if (!player.getMainHandItem().is(Items.WOODEN_SHOVEL)) return;
+            if (!player.getMainHandItem().is(com.cognitio.herbology.registry.ModItems.WOODEN_SPOON.get())) return;
             if (!level.getBlockState(pos).is(Blocks.WATER_CAULDRON)) return;
             if (level.getBlockState(pos).getValue(LayeredCauldronBlock.LEVEL) != 3) return;
 
