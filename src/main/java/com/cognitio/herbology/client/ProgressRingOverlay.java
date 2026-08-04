@@ -53,6 +53,9 @@ public class ProgressRingOverlay {
                         new com.cognitio.herbology.network.CauldronProcessPayload(hit.getBlockPos())
                     );
                     progressTicks = 0; // Reseta depois de enviar
+                    if (mc.player != null && mc.player.isUsingItem() && mc.player.getUseItem().is(com.cognitio.herbology.registry.ModItems.WOODEN_SPOON.get())) {
+                        mc.player.releaseUsingItem();
+                    }
                 }
             }
         } else {
@@ -60,6 +63,9 @@ public class ProgressRingOverlay {
             if (progressTicks > 0) {
                 progressTicks -= 2;
                 if (progressTicks < 0) progressTicks = 0;
+            }
+            if (mc.player != null && mc.player.isUsingItem() && mc.player.getUseItem().is(com.cognitio.herbology.registry.ModItems.WOODEN_SPOON.get())) {
+                mc.player.releaseUsingItem();
             }
         }
     }

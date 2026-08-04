@@ -36,7 +36,7 @@ public class ModItems {
             () -> new ItemNameBlockItem(com.cognitio.herbology.registry.ModBlocks.MANDRAKE_CROP.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> WOODEN_SPOON = ITEMS.register("wooden_spoon",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            () -> new com.cognitio.herbology.item.WoodenSpoonItem(new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> SAYLORS_EYE = ITEMS.register("saylors_eye", 
             () -> new net.minecraft.world.item.BlockItem(ModBlocks.SAYLORS_EYE.get(), new Item.Properties()));
