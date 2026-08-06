@@ -1,3 +1,6 @@
 {
-  "parent": "cognitio_herbology:block/discerned_saylors_eye_stage1"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "cognitio_herbology:item/discerned_saylors_eye"
+  }
 }

@@ -168,6 +168,23 @@ public class CognitioHerbology {
                 models.put(mandrakeLoc, mandrakeProxy);
                 models.put(discernedMandrakeLoc, mandrakeProxy);
             }
+
+            // Item de Saylor's Eye no Inventário
+            net.minecraft.client.resources.model.ModelResourceLocation saylorsEyeLoc = 
+                new net.minecraft.client.resources.model.ModelResourceLocation(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(MODID, "saylors_eye"), "inventory");
+            net.minecraft.client.resources.model.ModelResourceLocation discernedSaylorsEyeLoc = 
+                new net.minecraft.client.resources.model.ModelResourceLocation(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(MODID, "discerned_saylors_eye"), "inventory");
+            
+            if (models.containsKey(saylorsEyeLoc) && models.containsKey(discernedSaylorsEyeLoc)) {
+                net.minecraft.client.resources.model.BakedModel saylorsEyeModel = models.get(saylorsEyeLoc);
+                net.minecraft.client.resources.model.BakedModel discernedSaylorsEyeModel = models.get(discernedSaylorsEyeLoc);
+                
+                com.cognitio.herbology.client.model.InsightBakedModel saylorsEyeProxy = 
+                    new com.cognitio.herbology.client.model.InsightBakedModel(saylorsEyeModel, discernedSaylorsEyeModel, 100);
+                    
+                models.put(saylorsEyeLoc, saylorsEyeProxy);
+                // Não precisamos colocar de volta no discernedSaylorsEyeLoc porque ele nem existe como item no jogo, só usamos o BakedModel dele como alvo.
+            }
         }
     }
 
