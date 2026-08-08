@@ -31,7 +31,7 @@ public class ModItems {
                     .build()));
 
     public static final DeferredItem<Item> DISCERNED_MANDRAKE_ROOT = ITEMS.registerSimpleItem("discerned_mandrake_root", new Item.Properties());
-    
+    public static final DeferredItem<Item> TOASTED_MANDRAKE_ROOT = ITEMS.registerSimpleItem("toasted_mandrake_root", new Item.Properties());
     public static final DeferredItem<Item> MANDRAKE_SEEDS = ITEMS.register("mandrake_seeds",
             () -> new ItemNameBlockItem(com.cognitio.herbology.registry.ModBlocks.MANDRAKE_CROP.get(), new Item.Properties()));
 

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "cognitio_herbology:mandrake_root"
+  },
+  "result": {
+    "id": "cognitio_herbology:toasted_mandrake_root"
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}
