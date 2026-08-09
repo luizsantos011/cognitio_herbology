@@ -45,6 +45,8 @@ public class CognitioHerbology {
                 output.accept(com.cognitio.herbology.registry.ModItems.MANDRAKE_SEEDS.get());
                 output.accept(com.cognitio.herbology.registry.ModItems.DITTANY_LEAF.get());
                 output.accept(com.cognitio.herbology.registry.ModItems.DITTANY_SAPLING.get());
+                output.accept(com.cognitio.herbology.registry.ModItems.BELLADONNA.get());
+                output.accept(com.cognitio.herbology.registry.ModItems.APOTHECARY_GRIMOIRE.get());
                 output.accept(com.cognitio.herbology.registry.ModItems.HOMUNCULUS_EXTRACT.get()); 
                 output.accept(com.cognitio.herbology.registry.ModItems.SAYLORS_EYE.get()); 
                 output.accept(com.cognitio.herbology.registry.ModItems.WOODEN_SPOON.get()); 

@@ -12,8 +12,12 @@
   "item.cognitio_herbology.earmuffs": "Noise Earmuffs",
   "item.cognitio_herbology.homunculus_extract": "Homunculus Extract",
   "block.cognitio_herbology.saylors_eye": "Sailor's Eye",
-  "item.cognitio_herbology.saylors_eye": "Sailor's Eye",
+  "item.cognitio_herbology.saylors_eye": "Saylor's Eye",
   "item.cognitio_herbology.wooden_spoon": "Wooden Spoon",
+  "block.cognitio_herbology.belladonna": "Belladonna",
+  "item.cognitio_herbology.belladonna": "Belladonna",
+  "item.cognitio_herbology.apothecary_grimoire": "Apothecary's Grimoire",
+  "tooltip.cognitio_herbology.shift_prompt": "Hold [SHIFT] for more info",
   "tooltip.cognitio_herbology.earmuffs": "Essential to not go deaf...",
   "tooltip.cognitio_herbology.gloves": "Protects hands against toxins."
 }

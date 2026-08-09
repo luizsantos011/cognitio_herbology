@@ -38,6 +38,11 @@ public class ModItems {
     public static final DeferredItem<Item> DITTANY_LEAF = ITEMS.registerSimpleItem("dittany_leaf", new Item.Properties());
     public static final DeferredItem<Item> DITTANY_SAPLING = ITEMS.register("dittany_sapling",
             () -> new ItemNameBlockItem(com.cognitio.herbology.registry.ModBlocks.DITTANY_BUSH.get(), new Item.Properties()));
+            
+    public static final DeferredItem<Item> BELLADONNA = ITEMS.register("belladonna",
+            () -> new ItemNameBlockItem(com.cognitio.herbology.registry.ModBlocks.BELLADONNA.get(), new Item.Properties()));
+            
+    public static final DeferredItem<Item> APOTHECARY_GRIMOIRE = ITEMS.registerSimpleItem("apothecary_grimoire", new Item.Properties().stacksTo(1));
 
     public static final DeferredItem<Item> WOODEN_SPOON = ITEMS.register("wooden_spoon",
             () -> new com.cognitio.herbology.item.WoodenSpoonItem(new Item.Properties().stacksTo(1)));
