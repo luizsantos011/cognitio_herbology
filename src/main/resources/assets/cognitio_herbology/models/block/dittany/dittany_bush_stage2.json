@@ -2,6 +2,7 @@
   "parent": "minecraft:block/cross",
   "render_type": "minecraft:cutout",
   "textures": {
-    "cross": "cognitio_herbology:block/dittany_stage1"
+    "cross": "cognitio_herbology:block/dittany/dittany_stage2"
   }
 }
+

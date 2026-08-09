@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "cognitio_herbology:item/saylors_eye"
+    "layer0": "cognitio_herbology:item/saylors_eye/saylors_eye"
   }
 }
+

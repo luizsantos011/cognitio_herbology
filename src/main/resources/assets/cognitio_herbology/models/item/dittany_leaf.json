@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "cognitio_herbology:item/dittany_leaf"
+    "layer0": "cognitio_herbology:item/dittany/dittany_leaf"
   }
 }
+

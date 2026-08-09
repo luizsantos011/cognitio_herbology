@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "cognitio_herbology:item/homunculus_extract"
+    "layer0": "cognitio_herbology:item/extracts/homunculus_extract"
   }
 }
+
