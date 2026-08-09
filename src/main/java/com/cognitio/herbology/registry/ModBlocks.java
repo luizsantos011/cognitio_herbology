@@ -13,6 +13,9 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(CognitioHerbology.MODID);
+    
+    public static final DeferredBlock<Block> DITTANY_BUSH = BLOCKS.register("dittany_bush", 
+            () -> new com.cognitio.herbology.block.DittanyBushBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.SWEET_BERRY_BUSH)));
 
     public static final DeferredBlock<Block> MANDRAKE_CROP = BLOCKS.register("mandrake_crop", 
             () -> new MandrakeCropBlock(BlockBehaviour.Properties.of()

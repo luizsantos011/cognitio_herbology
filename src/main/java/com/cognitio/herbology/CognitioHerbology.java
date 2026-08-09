@@ -42,7 +42,9 @@ public class CognitioHerbology {
             .displayItems((parameters, output) -> {
                 output.accept(com.cognitio.herbology.registry.ModItems.MANDRAKE_ROOT.get()); 
                 output.accept(com.cognitio.herbology.registry.ModItems.TOASTED_MANDRAKE_ROOT.get());
-                output.accept(com.cognitio.herbology.registry.ModItems.MANDRAKE_SEEDS.get()); 
+                output.accept(com.cognitio.herbology.registry.ModItems.MANDRAKE_SEEDS.get());
+                output.accept(com.cognitio.herbology.registry.ModItems.DITTANY_LEAF.get());
+                output.accept(com.cognitio.herbology.registry.ModItems.DITTANY_SAPLING.get());
                 output.accept(com.cognitio.herbology.registry.ModItems.HOMUNCULUS_EXTRACT.get()); 
                 output.accept(com.cognitio.herbology.registry.ModItems.SAYLORS_EYE.get()); 
                 output.accept(com.cognitio.herbology.registry.ModItems.WOODEN_SPOON.get()); 
