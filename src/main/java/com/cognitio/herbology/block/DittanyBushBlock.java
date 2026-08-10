@@ -84,30 +84,29 @@ public class DittanyBushBlock extends BushBlock implements BonemealableBlock {
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+    protected net.minecraft.world.ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, net.minecraft.world.InteractionHand hand, BlockHitResult hitResult) {
         int age = state.getValue(AGE);
         boolean isFullyGrown = age == 3;
-        if (!isFullyGrown && player.getItemInHand(player.getUsedItemHand()).is(Items.BONE_MEAL)) {
-            return InteractionResult.PASS;
-        } else if (age > 1) {
+        
+        if (age > 1 && stack.is(Items.SHEARS)) {
             int dropAmount = 1 + level.random.nextInt(2) + (isFullyGrown ? 1 : 0);
             popResource(level, pos, new ItemStack(ModItems.DITTANY_LEAF.get(), dropAmount));
             
-            level.playSound(
-                null,
-                pos,
-                SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES,
-                SoundSource.BLOCKS,
-                1.0F,
-                0.8F + level.random.nextFloat() * 0.4F
-            );
-            BlockState newState = state.setValue(AGE, Integer.valueOf(1));
+            level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1.0F, 1.0F);
+            
+            if (player instanceof net.minecraft.server.level.ServerPlayer serverPlayer && level instanceof ServerLevel serverLevel) {
+                stack.hurtAndBreak(1, serverLevel, serverPlayer, item -> {
+                    player.onEquippedItemBroken(item, player.getEquipmentSlotForItem(stack));
+                });
+            }
+            
+            BlockState newState = state.setValue(AGE, Integer.valueOf(0));
             level.setBlock(pos, newState, 2);
             level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, newState));
-            return InteractionResult.sidedSuccess(level.isClientSide);
-        } else {
-            return super.useWithoutItem(state, level, pos, player, hitResult);
+            return net.minecraft.world.ItemInteractionResult.sidedSuccess(level.isClientSide);
         }
+        
+        return super.useItemOn(stack, state, level, pos, player, hand, hitResult);
     }
 
     @Override
