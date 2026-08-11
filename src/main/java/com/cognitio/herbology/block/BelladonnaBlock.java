@@ -50,11 +50,11 @@ public class BelladonnaBlock extends FlowerBlock {
             if (player != null) {
                 int insight = PerceptionEngine.getEffectivePerception(player);
                 if (insight >= 100) {
-                    // Chance de gotejar
                     if (random.nextInt(5) == 0) {
-                        double x = pos.getX() + 0.2D + random.nextDouble() * 0.6D;
-                        double y = pos.getY() + 0.4D + random.nextDouble() * 0.3D;
-                        double z = pos.getZ() + 0.2D + random.nextDouble() * 0.6D;
+                        net.minecraft.world.phys.Vec3 offset = state.getOffset(level, pos);
+                        double x = pos.getX() + offset.x + 0.2D + random.nextDouble() * 0.6D;
+                        double y = pos.getY() + offset.y + 0.4D + random.nextDouble() * 0.3D;
+                        double z = pos.getZ() + offset.z + 0.2D + random.nextDouble() * 0.6D;
                         level.addParticle(ParticleTypes.FALLING_OBSIDIAN_TEAR, x, y, z, 0.0D, 0.0D, 0.0D);
                     }
                 }
