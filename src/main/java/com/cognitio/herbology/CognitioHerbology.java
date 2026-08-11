@@ -46,6 +46,8 @@ public class CognitioHerbology {
                 output.accept(com.cognitio.herbology.registry.ModItems.DITTANY_LEAF.get());
                 output.accept(com.cognitio.herbology.registry.ModItems.DITTANY_SAPLING.get());
                 output.accept(com.cognitio.herbology.registry.ModItems.BELLADONNA.get());
+                output.accept(com.cognitio.herbology.registry.ModItems.PRESS.get());
+                output.accept(com.cognitio.herbology.registry.ModItems.EMPTY_FLASK.get());
                 output.accept(com.cognitio.herbology.registry.ModItems.PHANTOM_LYMPH.get());
                 output.accept(com.cognitio.herbology.registry.ModItems.GLOVES.get());
                 output.accept(com.cognitio.herbology.registry.ModItems.EARMUFFS.get());
@@ -60,6 +62,7 @@ public class CognitioHerbology {
     public CognitioHerbology(IEventBus modEventBus, ModContainer modContainer) {
         // Registros
         com.cognitio.herbology.registry.ModBlocks.register(modEventBus);
+        com.cognitio.herbology.registry.ModBlockEntities.register(modEventBus);
         com.cognitio.herbology.registry.ModItems.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
         

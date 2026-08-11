@@ -11,6 +11,7 @@
   "item.cognitio_herbology.gloves": "Luvas Botânicas",
   "item.cognitio_herbology.earmuffs": "Abafadores de Ruído",
   "item.cognitio_herbology.homunculus_extract": "Extrato de Homúnculo",
+  "item.cognitio_herbology.empty_flask": "Frasco de Extrato Vazio",
   "item.cognitio_herbology.phantom_lymph": "Linfa Fantasma",
   "block.cognitio_herbology.saylors_eye": "Olho-de-Marujo",
   "item.cognitio_herbology.saylors_eye": "Olho-de-Marujo",
@@ -19,7 +20,8 @@
   "item.cognitio_herbology.wooden_spoon": "Colher de Pau",
   "block.cognitio_herbology.belladonna": "Beladona",
   "item.cognitio_herbology.belladonna": "Beladona",
-  "item.cognitio_herbology.apothecary_grimoire": "Grimório do Boticário",
+  "block.cognitio_herbology.press": "Prensa Botânica",
+  "item.cognitio_herbology.apothecary_grimoire": "Grimório de Boticário",
   "tooltip.cognitio_herbology.earmuffs": "Essencial para não ensurdecer...",
   "tooltip.cognitio_herbology.gloves": "Protege as mãos contra toxinas."
 }

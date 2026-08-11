@@ -55,6 +55,9 @@ public class ModBlocks {
             () -> new com.cognitio.herbology.block.AlchemyCauldronBlock(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.WATER_CAULDRON),
                     com.cognitio.herbology.registry.ModItems.HOMUNCULUS_EXTRACT, false));
 
+    public static final DeferredBlock<Block> PRESS = BLOCKS.register("press",
+            () -> new com.cognitio.herbology.block.PressBlock(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.OAK_PLANKS).noOcclusion()));
+
     public static final DeferredBlock<Block> MUNDANE_CAULDRON = BLOCKS.register("mundane_cauldron",
             () -> new com.cognitio.herbology.block.AlchemyCauldronBlock(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.WATER_CAULDRON),
                     () -> net.minecraft.world.item.Items.POTION, true));

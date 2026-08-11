@@ -55,6 +55,11 @@ public class ModItems {
     public static final DeferredItem<Item> DISCERNED_SAYLORS_EYE = ITEMS.registerSimpleItem("discerned_saylors_eye", new Item.Properties());
 
 
+    public static final DeferredItem<Item> PRESS = ITEMS.register("press",
+            () -> new net.minecraft.world.item.BlockItem(com.cognitio.herbology.registry.ModBlocks.PRESS.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> EMPTY_FLASK = ITEMS.registerSimpleItem("empty_flask", new Item.Properties());
+
     public static final DeferredItem<Item> GLOVES = ITEMS.register("gloves", 
             () -> new GlovesItem(new Item.Properties().durability(256)));
 
