@@ -1,10 +1,10 @@
 {
   "loader": "neoforge:separate_transforms",
   "base": {
-    "parent": "cognitio_herbology:item/accessories/earmuffs_2d"
+    "parent": "cognitio_herbology:item/earmuffs_2d"
   },
   "perspectives": {
-    "head": { "parent": "cognitio_herbology:item/accessories/earmuffs_3d" }
+    "head": { "parent": "cognitio_herbology:item/earmuffs_3d" }
   }
 }
 

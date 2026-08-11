@@ -2,11 +2,11 @@
 	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "cognitio_herbology:item/texture_cable_part1",
-		"1": "cognitio_herbology:item/texture_cable_part2",
-		"2": "cognitio_herbology:item/texture_cable_part3",
-		"3": "cognitio_herbology:item/texture_cushion",
-		"particle": "cognitio_herbology:item/texture_cable_part1"
+		"0": "cognitio_herbology:item/accessories/texture_cable_part1",
+		"1": "cognitio_herbology:item/accessories/texture_cable_part2",
+		"2": "cognitio_herbology:item/accessories/texture_cable_part3",
+		"3": "cognitio_herbology:item/accessories/texture_cushion",
+		"particle": "cognitio_herbology:item/accessories/texture_cable_part1"
 	},
 	"elements": [
 		{
