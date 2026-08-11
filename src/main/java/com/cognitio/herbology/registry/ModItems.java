@@ -41,6 +41,8 @@ public class ModItems {
             
     public static final DeferredItem<Item> BELLADONNA = ITEMS.register("belladonna",
             () -> new ItemNameBlockItem(com.cognitio.herbology.registry.ModBlocks.BELLADONNA.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> PHANTOM_LYMPH = ITEMS.registerSimpleItem("phantom_lymph", new Item.Properties());
             
     public static final DeferredItem<Item> APOTHECARY_GRIMOIRE = ITEMS.registerSimpleItem("apothecary_grimoire", new Item.Properties().stacksTo(1));
 
