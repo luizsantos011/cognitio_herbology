@@ -39,9 +39,30 @@ public class InsightBakedModel implements BakedModel {
         return normalModel;
     }
 
+    private List<BakedQuad> processQuads(List<BakedQuad> originalQuads) {
+        if (getActiveModel() == discernedModel) {
+            List<BakedQuad> newQuads = new java.util.ArrayList<>();
+            for (BakedQuad quad : originalQuads) {
+                if (quad.getSprite().contents().name().getPath().contains("petals")) {
+                    int[] vertices = quad.getVertices().clone();
+                    int light = net.minecraft.client.renderer.LightTexture.pack(15, 15);
+                    int vertexSize = vertices.length / 4;
+                    for (int i = 0; i < 4; i++) {
+                        vertices[i * vertexSize + 6] = light;
+                    }
+                    newQuads.add(new BakedQuad(vertices, quad.getTintIndex(), quad.getDirection(), quad.getSprite(), quad.isShade()));
+                } else {
+                    newQuads.add(quad);
+                }
+            }
+            return newQuads;
+        }
+        return originalQuads;
+    }
+
     @Override
     public @NotNull List<BakedQuad> getQuads(@Nullable BlockState state, @Nullable Direction side, @NotNull RandomSource rand, @NotNull ModelData data, @Nullable net.minecraft.client.renderer.RenderType renderType) {
-        return getActiveModel().getQuads(state, side, rand, data, renderType);
+        return processQuads(getActiveModel().getQuads(state, side, rand, data, renderType));
     }
 
     @Override
@@ -51,7 +72,7 @@ public class InsightBakedModel implements BakedModel {
 
     @Override
     public @NotNull List<BakedQuad> getQuads(@Nullable BlockState state, @Nullable Direction side, @NotNull RandomSource rand) {
-        return getActiveModel().getQuads(state, side, rand);
+        return processQuads(getActiveModel().getQuads(state, side, rand));
     }
 
     @Override

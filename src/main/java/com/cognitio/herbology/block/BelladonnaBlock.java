@@ -53,7 +53,7 @@ public class BelladonnaBlock extends FlowerBlock {
                     // Chance de gotejar
                     if (random.nextInt(5) == 0) {
                         double x = pos.getX() + 0.2D + random.nextDouble() * 0.6D;
-                        double y = pos.getY() + 0.5D + random.nextDouble() * 0.3D;
+                        double y = pos.getY() + 0.4D + random.nextDouble() * 0.3D;
                         double z = pos.getZ() + 0.2D + random.nextDouble() * 0.6D;
                         level.addParticle(ParticleTypes.FALLING_OBSIDIAN_TEAR, x, y, z, 0.0D, 0.0D, 0.0D);
                     }
