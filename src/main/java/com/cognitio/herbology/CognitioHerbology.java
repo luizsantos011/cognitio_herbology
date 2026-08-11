@@ -190,6 +190,23 @@ public class CognitioHerbology {
                 models.put(saylorsEyeLoc, saylorsEyeProxy);
                 // Não precisamos colocar de volta no discernedSaylorsEyeLoc porque ele nem existe como item no jogo, só usamos o BakedModel dele como alvo.
             }
+            
+            // Bloco de Belladonna no mundo
+            net.minecraft.client.resources.model.ModelResourceLocation belladonnaLoc = 
+                new net.minecraft.client.resources.model.ModelResourceLocation(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(MODID, "belladonna"), "");
+            net.minecraft.client.resources.model.ModelResourceLocation discernedBelladonnaLoc = 
+                new net.minecraft.client.resources.model.ModelResourceLocation(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(MODID, "discerned_belladonna"), "");
+            
+            if (models.containsKey(belladonnaLoc) && models.containsKey(discernedBelladonnaLoc)) {
+                net.minecraft.client.resources.model.BakedModel belladonnaModel = models.get(belladonnaLoc);
+                net.minecraft.client.resources.model.BakedModel discernedBelladonnaModel = models.get(discernedBelladonnaLoc);
+                
+                com.cognitio.herbology.client.model.InsightBakedModel belladonnaProxy = 
+                    new com.cognitio.herbology.client.model.InsightBakedModel(belladonnaModel, discernedBelladonnaModel, 100);
+                    
+                models.put(belladonnaLoc, belladonnaProxy);
+                models.put(discernedBelladonnaLoc, belladonnaProxy);
+            }
         }
     }
 

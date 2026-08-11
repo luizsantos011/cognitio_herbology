@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "cross": "cognitio_herbology:block/belladonna/belladonna_discerned"
+  }
+}
