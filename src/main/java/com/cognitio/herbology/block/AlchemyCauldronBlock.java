@@ -25,7 +25,7 @@ public class AlchemyCauldronBlock extends LayeredCauldronBlock {
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-        if (stack.is(Items.GLASS_BOTTLE)) {
+        if (stack.is(com.cognitio.herbology.registry.ModItems.EMPTY_FLASK.get())) {
             if (!level.isClientSide) {
                 ItemStack potionStack;
                 if (isMundane) {
