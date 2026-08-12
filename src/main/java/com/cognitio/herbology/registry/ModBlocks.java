@@ -62,6 +62,14 @@ public class ModBlocks {
             () -> new com.cognitio.herbology.block.AlchemyCauldronBlock(BlockBehaviour.Properties.ofFullCopy(net.minecraft.world.level.block.Blocks.WATER_CAULDRON),
                     () -> net.minecraft.world.item.Items.POTION, true));
 
+    public static final DeferredBlock<Block> BLACK_HELLEBORE = BLOCKS.register("black_hellebore",
+            () -> new net.minecraft.world.level.block.FlowerBlock(net.minecraft.world.effect.MobEffects.WITHER, 5, BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.PLANT)
+                    .noCollission()
+                    .instabreak()
+                    .sound(SoundType.GRASS)
+                    .offsetType(BlockBehaviour.OffsetType.XZ)));
+
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
