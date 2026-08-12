@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cognitio_herbology:mortar_and_pestle"
+    },
+    {
+      "item": "cognitio_herbology:toasted_mandrake_root"
+    }
+  ],
+  "result": {
+    "id": "cognitio_herbology:mandrake_powder",
+    "count": 1
+  }
+}

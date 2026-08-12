@@ -60,6 +60,11 @@ public class ModItems {
 
     public static final DeferredItem<Item> EMPTY_FLASK = ITEMS.registerSimpleItem("empty_flask", new Item.Properties());
 
+    public static final DeferredItem<Item> MORTAR_AND_PESTLE = ITEMS.register("mortar_and_pestle",
+            () -> new com.cognitio.herbology.item.MortarAndPestleItem(new Item.Properties().durability(64)));
+
+    public static final DeferredItem<Item> MANDRAKE_POWDER = ITEMS.registerSimpleItem("mandrake_powder", new Item.Properties());
+
     public static final DeferredItem<Item> GLOVES = ITEMS.register("gloves", 
             () -> new GlovesItem(new Item.Properties().durability(256)));
 
