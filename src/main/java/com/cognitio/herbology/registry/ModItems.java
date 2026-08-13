@@ -62,6 +62,7 @@ public class ModItems {
             () -> new net.minecraft.world.item.BlockItem(com.cognitio.herbology.registry.ModBlocks.PRESS.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> EMPTY_FLASK = ITEMS.registerSimpleItem("empty_flask", new Item.Properties());
+    public static final DeferredItem<Item> HERMETIC_NECTAR = ITEMS.registerSimpleItem("hermetic_nectar", new Item.Properties());
 
     public static final DeferredItem<Item> MORTAR_AND_PESTLE = ITEMS.register("mortar_and_pestle",
             () -> new com.cognitio.herbology.item.MortarAndPestleItem(new Item.Properties().durability(64)));

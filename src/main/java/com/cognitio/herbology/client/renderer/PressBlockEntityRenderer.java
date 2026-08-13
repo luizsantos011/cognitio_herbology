@@ -70,8 +70,14 @@ public class PressBlockEntityRenderer implements BlockEntityRenderer<PressBlockE
                 float minV = sprite.getV0();
                 float maxV = sprite.getV1();
 
-                // Purple tint for Belladonna liquid
-                float r = 0.5f; float g = 0.2f; float b = 0.7f; float a = 0.8f;
+                com.cognitio.herbology.registry.ExtractColorRegistry.ExtractData extractData = com.cognitio.herbology.registry.ExtractColorRegistry.getData(stack.getItem());
+                float r = 0.5f, g = 0.5f, b = 0.5f, a = 0.8f;
+                if (extractData != null) {
+                    r = extractData.rgb[0];
+                    g = extractData.rgb[1];
+                    b = extractData.rgb[2];
+                }
+
                 float y = 2.01f / 16.0f;
                 float minX = 3.0f / 16.0f; float maxX = 13.0f / 16.0f;
                 float minZ = 3.0f / 16.0f; float maxZ = 13.0f / 16.0f;

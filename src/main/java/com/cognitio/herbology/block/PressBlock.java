@@ -72,16 +72,23 @@ public class PressBlock extends Block implements EntityBlock {
             if (press.isFinished()) {
                 if (stack.is(ModItems.EMPTY_FLASK.get())) {
                     if (!level.isClientSide) {
-                        // TODO: Verify if Homunculus Extract or Phantom Lymph should be dropped. 
-                        // For now we will drop Phantom Lymph.
-                        ItemStack lymph = new ItemStack(ModItems.PHANTOM_LYMPH.get());
-                        ItemStack newStack = net.minecraft.world.item.ItemUtils.createFilledResult(stack, player, lymph);
-                        player.setItemInHand(hand, newStack);
+                        net.minecraft.world.item.Item inputItem = press.getItemHandler().getStackInSlot(0).getItem();
+                        com.cognitio.herbology.registry.ExtractColorRegistry.ExtractData data = com.cognitio.herbology.registry.ExtractColorRegistry.getData(inputItem);
                         
-                        press.setFinished(false);
-                        press.setCrankProgress(0.0f);
-                        press.getItemHandler().setStackInSlot(0, ItemStack.EMPTY);
-                        level.playSound(null, pos, net.minecraft.sounds.SoundEvents.BOTTLE_FILL, net.minecraft.sounds.SoundSource.BLOCKS, 1.0f, 1.0f);
+                        ItemStack extractResult = ItemStack.EMPTY;
+                        if (data != null) {
+                            extractResult = new ItemStack(data.outputExtract.get());
+                        }
+
+                        if (!extractResult.isEmpty()) {
+                            ItemStack newStack = net.minecraft.world.item.ItemUtils.createFilledResult(stack, player, extractResult);
+                            player.setItemInHand(hand, newStack);
+                            
+                            press.setFinished(false);
+                            press.setCrankProgress(0.0f);
+                            press.getItemHandler().setStackInSlot(0, ItemStack.EMPTY);
+                            level.playSound(null, pos, net.minecraft.sounds.SoundEvents.BOTTLE_FILL, net.minecraft.sounds.SoundSource.BLOCKS, 1.0f, 1.0f);
+                        }
                     }
                     return ItemInteractionResult.sidedSuccess(level.isClientSide);
                 }
@@ -89,7 +96,7 @@ public class PressBlock extends Block implements EntityBlock {
             }
 
             if (press.getCrankProgress() == 0.0f && press.getItemHandler().getStackInSlot(0).isEmpty()) {
-                if (stack.is(ModItems.BELLADONNA.get())) {
+                if (com.cognitio.herbology.registry.ExtractColorRegistry.getData(stack.getItem()) != null) {
                     if (!level.isClientSide) {
                         ItemStack copy = stack.copy();
                         copy.setCount(1);

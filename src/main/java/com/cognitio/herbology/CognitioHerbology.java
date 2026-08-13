@@ -52,6 +52,7 @@ public class CognitioHerbology {
                 output.accept(com.cognitio.herbology.registry.ModItems.MORTAR_AND_PESTLE.get());
                 output.accept(com.cognitio.herbology.registry.ModItems.MANDRAKE_POWDER.get());
                 output.accept(com.cognitio.herbology.registry.ModItems.PHANTOM_LYMPH.get());
+                output.accept(com.cognitio.herbology.registry.ModItems.HERMETIC_NECTAR.get());
                 output.accept(com.cognitio.herbology.registry.ModItems.GLOVES.get());
                 output.accept(com.cognitio.herbology.registry.ModItems.EARMUFFS.get());
                 output.accept(com.cognitio.herbology.registry.ModItems.APOTHECARY_GRIMOIRE.get());
@@ -126,8 +127,12 @@ public class CognitioHerbology {
         @SubscribeEvent
         static void registerBlockColors(net.neoforged.neoforge.client.event.RegisterColorHandlersEvent.Block event) {
             event.register((state, level, pos, tintIndex) -> {
-                return 0x228B22; // Verde Escuro (Homúnculo)
+                return com.cognitio.herbology.registry.ExtractColorRegistry.getData(com.cognitio.herbology.registry.ModItems.MANDRAKE_ROOT.get()).hexColor; // Verde Escuro (Homúnculo)
             }, com.cognitio.herbology.registry.ModBlocks.HOMUNCULUS_CAULDRON.get());
+
+            event.register((state, level, pos, tintIndex) -> {
+                return com.cognitio.herbology.registry.ExtractColorRegistry.getData(com.cognitio.herbology.registry.ModItems.BLACK_HELLEBORE.get()).hexColor; // Néctar Hermético
+            }, com.cognitio.herbology.registry.ModBlocks.HERMETIC_CAULDRON.get());
 
             event.register((state, level, pos, tintIndex) -> {
                 return 0x808080; // Cinza (Mundana)
