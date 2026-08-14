@@ -127,7 +127,7 @@ public class CognitioHerbology {
         @SubscribeEvent
         static void registerBlockColors(net.neoforged.neoforge.client.event.RegisterColorHandlersEvent.Block event) {
             event.register((state, level, pos, tintIndex) -> {
-                return com.cognitio.herbology.registry.ExtractColorRegistry.getData(com.cognitio.herbology.registry.ModItems.MANDRAKE_ROOT.get()).hexColor; // Verde Escuro (Homúnculo)
+                return com.cognitio.herbology.registry.ExtractColorRegistry.getData(com.cognitio.herbology.registry.ModItems.MANDRAKE_ROOT.get()).hexColor; // Amarelo Esbranquiçado (Homúnculo)
             }, com.cognitio.herbology.registry.ModBlocks.HOMUNCULUS_CAULDRON.get());
 
             event.register((state, level, pos, tintIndex) -> {

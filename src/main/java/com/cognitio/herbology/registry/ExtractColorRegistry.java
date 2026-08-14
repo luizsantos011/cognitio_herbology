@@ -32,7 +32,7 @@ public class ExtractColorRegistry {
             // Lazy initialization to ensure Items are registered
             BY_INPUT.put(ModItems.BELLADONNA.get(), new ExtractData(ModItems.BELLADONNA, ModItems.PHANTOM_LYMPH, 0x8033B3));
             BY_INPUT.put(ModItems.BLACK_HELLEBORE.get(), new ExtractData(ModItems.BLACK_HELLEBORE, ModItems.HERMETIC_NECTAR, 0x30252F));
-            BY_INPUT.put(ModItems.MANDRAKE_ROOT.get(), new ExtractData(ModItems.MANDRAKE_ROOT, ModItems.HOMUNCULUS_EXTRACT, 0x228B22));
+            BY_INPUT.put(ModItems.MANDRAKE_ROOT.get(), new ExtractData(ModItems.MANDRAKE_ROOT, ModItems.HOMUNCULUS_EXTRACT, 0xF0F0AA));
         }
         return BY_INPUT.get(inputItem);
     }
