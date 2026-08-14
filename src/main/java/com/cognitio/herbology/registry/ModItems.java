@@ -16,11 +16,7 @@ public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CognitioHerbology.MODID);
 
     public static final DeferredItem<Item> MANDRAKE_ROOT = ITEMS.registerSimpleItem("mandrake_root", 
-            new Item.Properties().food(new FoodProperties.Builder()
-                    .nutrition(0).saturationModifier(0)
-                    .effect(() -> new MobEffectInstance(MobEffects.POISON, 600, 3), 1.0f) // Veneno severo por 30s
-                    .alwaysEdible()
-                    .build()));
+            new Item.Properties());
     
     public static final DeferredItem<Item> HOMUNCULUS_EXTRACT = ITEMS.registerItem("homunculus_extract", 
             properties -> new com.cognitio.herbology.item.HomunculusExtractItem(properties),
