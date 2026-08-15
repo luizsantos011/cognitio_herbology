@@ -20,16 +20,35 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.block.state.StateDefinition;
+
 public class PressBlock extends Block implements EntityBlock {
     public static final MapCodec<PressBlock> CODEC = simpleCodec(properties -> new PressBlock(properties));
 
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+
     private static final net.minecraft.world.phys.shapes.VoxelShape SHAPE = net.minecraft.world.phys.shapes.Shapes.or(
-        Block.box(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D), // Base e armação de madeira
-        Block.box(5.0D, 16.0D, 5.0D, 11.0D, 20.0D, 11.0D) // Fuso e manivela
+        Block.box(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D),
+        Block.box(5.0D, 16.0D, 5.0D, 11.0D, 20.0D, 11.0D)
     );
 
     public PressBlock(BlockBehaviour.Properties properties) {
         super(properties);
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, net.minecraft.core.Direction.NORTH));
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(FACING);
+    }
+
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
     @Override

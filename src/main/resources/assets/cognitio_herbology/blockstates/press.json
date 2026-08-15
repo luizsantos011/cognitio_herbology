@@ -1,5 +1,8 @@
 {
   "variants": {
-    "": { "model": "cognitio_herbology:block/press_base" }
+    "facing=north": { "model": "cognitio_herbology:block/press_base" },
+    "facing=south": { "model": "cognitio_herbology:block/press_base", "y": 180 },
+    "facing=west":  { "model": "cognitio_herbology:block/press_base", "y": 270 },
+    "facing=east":  { "model": "cognitio_herbology:block/press_base", "y": 90 }
   }
 }
