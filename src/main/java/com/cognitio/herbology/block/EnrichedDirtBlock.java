@@ -29,12 +29,7 @@ public class EnrichedDirtBlock extends Block {
         );
     }
 
-    @Override
-    public boolean canSustainPlant(BlockState state, BlockGetter level, BlockPos pos, Direction facing, net.neoforged.neoforge.common.IPlantable plantable) {
-        // Assume all dirt plants can grow on it
-        net.minecraft.world.level.block.state.BlockState plant = plantable.getPlant(level, pos.relative(facing));
-        return true; 
-    }
+
 
     @Nullable
     @Override
@@ -68,3 +63,4 @@ public class EnrichedDirtBlock extends Block {
         }
     }
 }
+
