@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "cognitio_herbology:block/enriched_dirt"
+  }
+}

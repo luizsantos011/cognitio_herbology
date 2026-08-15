@@ -73,6 +73,12 @@ public class ModBlocks {
                     .instabreak()
                     .sound(SoundType.GRASS)
                     .offsetType(BlockBehaviour.OffsetType.XZ)));
+                    
+    public static final DeferredBlock<Block> ENRICHED_DIRT = BLOCKS.register("enriched_dirt",
+            () -> new com.cognitio.herbology.block.EnrichedDirtBlock());
+            
+    public static final DeferredBlock<Block> ENRICHED_FARMLAND = BLOCKS.register("enriched_farmland",
+            () -> new com.cognitio.herbology.block.EnrichedFarmlandBlock());
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

@@ -26,7 +26,7 @@ public class ModItems {
             properties -> new com.cognitio.herbology.item.HomunculusExtractItem(properties),
             new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(0).saturationModifier(0)
-                    .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 300, 0), 1.0f) // Náusea 15 seg, 100% chance
+                    .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 300, 0), 1.0f) // Nausea 15 seg, 100% chance
                     .alwaysEdible()
                     .build()));
 
@@ -74,6 +74,9 @@ public class ModItems {
 
     public static final DeferredItem<Item> EARMUFFS = ITEMS.register("earmuffs", 
             () -> new com.cognitio.herbology.item.EarmuffsItem(new Item.Properties().durability(55)));
+
+    public static final DeferredItem<Item> ENRICHED_DIRT = ITEMS.register("enriched_dirt", 
+            () -> new net.minecraft.world.item.BlockItem(ModBlocks.ENRICHED_DIRT.get(), new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

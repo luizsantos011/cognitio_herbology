@@ -58,7 +58,8 @@ public class CognitioHerbology {
                 output.accept(com.cognitio.herbology.registry.ModItems.APOTHECARY_GRIMOIRE.get());
                 output.accept(com.cognitio.herbology.registry.ModItems.HOMUNCULUS_EXTRACT.get()); 
                 output.accept(com.cognitio.herbology.registry.ModItems.SAYLORS_EYE.get()); 
-                output.accept(com.cognitio.herbology.registry.ModItems.WOODEN_SPOON.get()); 
+                output.accept(com.cognitio.herbology.registry.ModItems.WOODEN_SPOON.get());
+                output.accept(com.cognitio.herbology.registry.ModItems.ENRICHED_DIRT.get()); 
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
@@ -96,7 +97,7 @@ public class CognitioHerbology {
 
         Config.ITEM_STRINGS.get().forEach((item) -> LOGGER.info("ITEM >> {}", item));
 
-        // Registrar transmutação da mandrágora
+        // Registrar transmuta????o da mandr??gora
         event.enqueueWork(() -> {
             com.cognitio.api.perception.TransmutationAPI.register(
                 com.cognitio.herbology.registry.ModItems.MANDRAKE_ROOT.get(),
@@ -127,11 +128,11 @@ public class CognitioHerbology {
         @SubscribeEvent
         static void registerBlockColors(net.neoforged.neoforge.client.event.RegisterColorHandlersEvent.Block event) {
             event.register((state, level, pos, tintIndex) -> {
-                return com.cognitio.herbology.registry.ExtractColorRegistry.getData(com.cognitio.herbology.registry.ModItems.MANDRAKE_ROOT.get()).hexColor; // Amarelo Esbranquiçado (Homúnculo)
+                return com.cognitio.herbology.registry.ExtractColorRegistry.getData(com.cognitio.herbology.registry.ModItems.MANDRAKE_ROOT.get()).hexColor; // Amarelo Esbranqui??ado (Hom??nculo)
             }, com.cognitio.herbology.registry.ModBlocks.HOMUNCULUS_CAULDRON.get());
 
             event.register((state, level, pos, tintIndex) -> {
-                return com.cognitio.herbology.registry.ExtractColorRegistry.getData(com.cognitio.herbology.registry.ModItems.BLACK_HELLEBORE.get()).hexColor; // Néctar Hermético
+                return com.cognitio.herbology.registry.ExtractColorRegistry.getData(com.cognitio.herbology.registry.ModItems.BLACK_HELLEBORE.get()).hexColor; // N??ctar Herm??tico
             }, com.cognitio.herbology.registry.ModBlocks.HERMETIC_CAULDRON.get());
 
             event.register((state, level, pos, tintIndex) -> {
@@ -161,7 +162,7 @@ public class CognitioHerbology {
                         net.minecraft.client.resources.model.BakedModel normalModel = models.get(normalLoc);
                         net.minecraft.client.resources.model.BakedModel discernedModel = models.get(discernedLoc);
                         
-                        // Disfarce Duplo: Ambos os blocos vão obedecer à alucinação de Insight!
+                        // Disfarce Duplo: Ambos os blocos v??o obedecer ?? alucina????o de Insight!
                         com.cognitio.herbology.client.model.InsightBakedModel proxy = 
                             new com.cognitio.herbology.client.model.InsightBakedModel(normalModel, discernedModel, 100);
                             
@@ -171,7 +172,7 @@ public class CognitioHerbology {
                 }
             }
 
-            // Itens de Mandrágora no Inventário
+            // Itens de Mandr??gora no Invent??rio
             net.minecraft.client.resources.model.ModelResourceLocation mandrakeLoc = 
                 new net.minecraft.client.resources.model.ModelResourceLocation(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(MODID, "mandrake_root"), "inventory");
             net.minecraft.client.resources.model.ModelResourceLocation discernedMandrakeLoc = 
@@ -188,7 +189,7 @@ public class CognitioHerbology {
                 models.put(discernedMandrakeLoc, mandrakeProxy);
             }
 
-            // Item de Saylor's Eye no Inventário
+            // Item de Saylor's Eye no Invent??rio
             net.minecraft.client.resources.model.ModelResourceLocation saylorsEyeLoc = 
                 new net.minecraft.client.resources.model.ModelResourceLocation(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(MODID, "saylors_eye"), "inventory");
             net.minecraft.client.resources.model.ModelResourceLocation discernedSaylorsEyeLoc = 
@@ -202,7 +203,7 @@ public class CognitioHerbology {
                     new com.cognitio.herbology.client.model.InsightBakedModel(saylorsEyeModel, discernedSaylorsEyeModel, 100);
                     
                 models.put(saylorsEyeLoc, saylorsEyeProxy);
-                // Não precisamos colocar de volta no discernedSaylorsEyeLoc porque ele nem existe como item no jogo, só usamos o BakedModel dele como alvo.
+                // N??o precisamos colocar de volta no discernedSaylorsEyeLoc porque ele nem existe como item no jogo, s?? usamos o BakedModel dele como alvo.
             }
             
             // Bloco de Belladonna no mundo
@@ -246,3 +247,4 @@ public class CognitioHerbology {
         }
     }
 }
+

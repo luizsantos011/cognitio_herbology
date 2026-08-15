@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_farmland",
+  "textures": {
+    "dirt": "cognitio_herbology:block/enriched_dirt",
+    "top": "cognitio_herbology:block/enriched_farmland_moist"
+  }
+}

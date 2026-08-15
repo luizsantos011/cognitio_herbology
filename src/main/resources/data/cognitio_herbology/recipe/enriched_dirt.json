@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "minecraft:dirt" },
+    { "item": "cognitio_herbology:mandrake_powder" },
+    { "item": "cognitio_herbology:mandrake_powder" },
+    { "item": "cognitio_herbology:mandrake_powder" },
+    { "item": "cognitio_herbology:mandrake_powder" },
+    { "item": "minecraft:bone_meal" },
+    { "item": "minecraft:bone_meal" },
+    { "item": "minecraft:bone_meal" },
+    { "item": "minecraft:bone_meal" }
+  ],
+  "result": {
+    "id": "cognitio_herbology:enriched_dirt",
+    "count": 1
+  }
+}

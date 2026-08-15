@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "cognitio_herbology:block/enriched_dirt" }
+  }
+}
